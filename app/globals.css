@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *, .medium *));
+
+@layer base {
+  :root {
+    --bg: #f8fafc;
+    --paper: #ffffff;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --blue: #2563eb;
+    --cyan: #06b6d4;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --shadow: 0 22px 70px rgba(15, 23, 42, 0.11);
+    
+    --body-bg: radial-gradient(circle at 25% 0%, #dbeafe, transparent 34%), radial-gradient(circle at 100% 20%, #ccfbf1, transparent 28%), linear-gradient(180deg, #f8fafc, #e9f0f8);
+    --phone-bg: #f7fafc;
+    --phone-border: rgba(148, 163, 184, 0.35);
+    --phone-shadow: 0 36px 120px rgba(15, 23, 42, 0.25);
+    
+    --hero-bg: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #06b6d4 100%);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-border: rgba(255, 255, 255, 0.9);
+    --faint: #f1f5f9;
+  }
+
+  .medium {
+    --bg: #030712;
+    --paper: #08111f;
+    --ink: #e5f3ff;
+    --muted: #7d91a8;
+    --line: #17314a;
+    --blue: #60a5fa;
+    --cyan: #22d3ee;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --shadow: 0 14px 42px rgba(0, 0, 0, 0.25);
+    
+    --body-bg: radial-gradient(circle at 50% -10%, #164e63, transparent 38%), radial-gradient(circle at 100% 10%, rgba(30, 58, 138, 0.33), transparent 24%), #020617;
+    --phone-bg: #030712;
+    --phone-border: #1e3a5f;
+    --phone-shadow: 0 0 0 10px rgba(15, 23, 42, 0.6), 0 42px 120px rgba(0, 0, 0, 0.6);
+    
+    --hero-bg: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.11), transparent 32%), linear-gradient(180deg, rgba(8, 17, 31, 0.96), rgba(3, 7, 18, 0.95));
+    --nav-bg: rgba(2, 6, 23, 0.75);
+    --nav-border: rgba(34, 211, 238, 0.18);
+    --faint: #1e293b;
+  }
+
+  .dark {
+    --bg: #000000;
+    --paper: #000000;
+    --ink: #ffffff;
+    --muted: #94a3b8;
+    --line: #1e293b;
+    --blue: #3b82f6;
+    --cyan: #22d3ee;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --shadow: 0 0 0 rgba(0, 0, 0, 0);
+    
+    --body-bg: #000000;
+    --phone-bg: #000000;
+    --phone-border: #334155;
+    --phone-shadow: 0 0 0 10px #000000, 0 42px 120px rgba(0, 0, 0, 1);
+    
+    --hero-bg: #000000;
+    --nav-bg: rgba(0, 0, 0, 0.85);
+    --nav-border: rgba(51, 65, 85, 0.5);
+    --faint: #111827;
+  }
+
+  html, body {
+    @apply h-full overflow-hidden;
+    background: var(--body-bg);
+    color: var(--ink);
+  }
+}
+
+.screen-pattern {
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0) 1px, transparent 1px);
+}
+
+.medium .screen-pattern, .dark .screen-pattern {
+  background-image: 
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.hero-pattern::before {
+  content: "";
+  position: absolute;
+  right: -70px;
+  top: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 32px solid rgba(255,255,255,0.11);
+}
+
+.hero-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.075) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+}
+
+.medium .hero-pattern::before, .dark .hero-pattern::before {
+  display: none;
+}
+.medium .hero-pattern::after, .dark .hero-pattern::after {
+  background: 
+    linear-gradient(90deg, rgba(34,211,238,0.07) 1px, transparent 1px),
+    linear-gradient(rgba(34,211,238,0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(180deg, black, transparent 74%);
+  -webkit-mask-image: linear-gradient(180deg, black, transparent 74%);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
