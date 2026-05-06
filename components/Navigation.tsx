@@ -1,9 +1,10 @@
 "use client";
 
 import { Home, BookOpen, User, Sigma } from "lucide-react";
+import type { BaseView } from "@/lib/navigationTypes";
 
-export function BottomNav({ currentView, setView }: { currentView: string, setView: (v: string) => void }) {
-  const tabs = [
+export function BottomNav({ currentView, setView }: { currentView: BaseView, setView: (v: BaseView) => void }) {
+  const tabs: Array<{ id: BaseView; icon: typeof Home; label: string; color: string }> = [
     { id: 'home', icon: Home, label: '홈', color: 'text-blue-600 dark:text-blue-400' },
     { id: 'subjects', icon: BookOpen, label: '학습', color: 'text-emerald-600 dark:text-emerald-400' },
     { id: 'formula', icon: Sigma, label: '공식', color: 'text-violet-600 dark:text-violet-400' },
@@ -11,7 +12,7 @@ export function BottomNav({ currentView, setView }: { currentView: string, setVi
   ];
 
   return (
-    <div className="absolute left-6 right-6 bottom-[24px] h-[60px] rounded-[30px] bg-white/50 dark:bg-[#020617]/20 border border-white/50 dark:border-white/10 backdrop-blur-lg backdrop-saturate-200 flex justify-around items-center shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,1)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] z-50">
+    <div className="absolute left-6 right-6 bottom-[18px] h-[50px] rounded-[25px] bg-white/50 dark:bg-[#020617]/20 border border-white/50 dark:border-white/10 backdrop-blur-lg backdrop-saturate-200 flex justify-around items-center shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,1)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] z-50">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = currentView === tab.id;
@@ -19,13 +20,13 @@ export function BottomNav({ currentView, setView }: { currentView: string, setVi
           <button
             key={tab.id}
             onClick={() => setView(tab.id)}
-            className={`relative flex flex-col items-center justify-center gap-1.5 font-bold text-[10px] transition-colors w-16 h-full ${
+            className={`relative flex flex-col items-center justify-center gap-1 font-bold text-[9px] transition-colors w-16 h-full ${
               isActive 
                 ? tab.color 
                 : 'text-slate-600 dark:text-slate-400/80'
             }`}
           >
-            <Icon size={22} strokeWidth={isActive ? 2.5 : 2} className={isActive ? 'drop-shadow-sm' : ''} />
+            <Icon size={20} strokeWidth={isActive ? 2.5 : 2} className={isActive ? 'drop-shadow-sm' : ''} />
             <span>{tab.label}</span>
           </button>
         );

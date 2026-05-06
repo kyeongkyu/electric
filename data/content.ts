@@ -1,4 +1,5 @@
 import { electricityTheoryCourse } from '@/data/electricityTheoryCourse';
+import { enhanceFoundationCourses } from '@/data/contentEnhancements';
 
 export interface Lesson {
   id: string;
@@ -33,7 +34,7 @@ export interface Subject {
   chapters: Chapter[];
 }
 
-export const curriculum: Subject[] = [
+export const curriculum: Subject[] = enhanceFoundationCourses([
   {
     id: "electrical-essentials",
     title: "전기공학 입문 (Essential Foundations)",
@@ -2550,4 +2551,4 @@ RLC가 복잡하게 얽힌 회로에 갑자기 스위치를 켜면(과도 상태
   }
 
   
-];
+]);
