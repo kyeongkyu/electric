@@ -22,11 +22,11 @@ export function SubjectDetail({ id, onBack, onPush, isTab = false }: { id: strin
           <button
             onClick={onBack}
             aria-label="뒤로가기"
-            className="pointer-events-auto flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full border border-white/60 bg-white/30 text-[22px] font-black text-[#92400e] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-95 dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]"
+            className="pointer-events-auto flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border border-white/60 bg-white/30 text-[24px] font-black text-[#92400e] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-95 dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]"
           >
             <span className="block leading-none -translate-x-[1px] -translate-y-[1px]">‹</span>
           </button>
-          <div className="pointer-events-auto flex h-[40px] min-w-0 flex-1 items-center rounded-full border border-white/60 bg-white/30 px-[16px] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]">
+          <div className="pointer-events-auto flex h-[46px] min-w-0 flex-1 items-center rounded-full border border-white/60 bg-white/30 px-[18px] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]">
             <span className="min-w-0 truncate text-[14px] font-black tracking-tight text-[var(--ink)] dark:text-[#e5f3ff]">
               {subject.title}
             </span>

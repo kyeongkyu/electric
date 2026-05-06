@@ -117,23 +117,23 @@ export function LessonView({ id, subjectId, chapterId, onBack, onReplace }: { id
   };
 
   return (
-    <div ref={rootRef} className="min-h-full bg-[#fef5e7] dark:bg-[#030712] flex flex-col pointer-events-auto w-full pb-[80px]">
+    <div ref={rootRef} className="min-h-full bg-[#fef5e7] dark:bg-[#030712] flex flex-col pointer-events-auto w-full pb-[96px]">
       <div className="fixed left-1/2 top-[18px] z-40 flex w-full max-w-md -translate-x-1/2 items-center gap-[10px] px-[18px] pointer-events-none">
         <button
           onClick={onBack}
           aria-label="뒤로가기"
-          className="pointer-events-auto flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full border border-white/60 bg-white/30 text-[22px] font-black text-[#92400e] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-95 dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]"
+          className="pointer-events-auto flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border border-white/60 bg-white/30 text-[24px] font-black text-[#92400e] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-95 dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]"
         >
           <span className="block leading-none -translate-x-[1px] -translate-y-[1px]">‹</span>
         </button>
-        <div className="pointer-events-auto flex h-[40px] min-w-0 flex-1 items-center rounded-full border border-white/60 bg-white/30 px-[16px] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]">
+        <div className="pointer-events-auto flex h-[46px] min-w-0 flex-1 items-center rounded-full border border-white/60 bg-white/30 px-[18px] shadow-[0_16px_44px_rgba(15,23,42,.16),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_16px_44px_rgba(0,0,0,.38),inset_0_1px_1px_rgba(255,255,255,.1)]">
           <h1 className="m-0 min-w-0 truncate text-[14px] font-black tracking-tight text-[var(--ink)] dark:text-[#e5f3ff]">
             {lesson.title}
           </h1>
         </div>
       </div>
 
-      <article className="flex-1 px-[20px] pb-[132px] pt-[82px] text-[var(--ink)] dark:text-[#e5f3ff] leading-[1.85] tracking-[-0.015em]">
+      <article className="flex-1 px-[20px] pb-[152px] pt-[82px] text-[var(--ink)] dark:text-[#e5f3ff] leading-[1.85] tracking-[-0.015em]">
        <section className="border-b border-[#eadfce] dark:border-[#1e3a5f] pb-[18px] mb-[18px]">
          <div className="text-[11px] font-black text-[#b45309] dark:text-[#60a5fa] tracking-widest uppercase">Electrical Essentials</div>
          <h2 className="text-[30px] leading-[1.08] tracking-tight mt-[8px] mb-[10px] font-bold">{lesson.title}</h2>
@@ -152,14 +152,14 @@ export function LessonView({ id, subjectId, chapterId, onBack, onReplace }: { id
      </article>
 
       <motion.div
-        animate={{ y: isBottomNavVisible ? 0 : 88, opacity: isBottomNavVisible ? 1 : 0 }}
+        animate={{ y: isBottomNavVisible ? 0 : 104, opacity: isBottomNavVisible ? 1 : 0 }}
         transition={{ type: 'spring', stiffness: 260, damping: 30, mass: 0.8 }}
-        className="fixed bottom-0 left-0 right-0 max-w-md mx-auto px-[18px] pb-[16px] pt-[8px] z-40 bg-gradient-to-t from-[#fffcf5] dark:from-[#030712] via-[#fffcf5]/70 dark:via-[#030712]/70 to-transparent flex gap-[10px] pointer-events-none"
+        className="fixed bottom-0 left-0 right-0 max-w-md mx-auto px-[18px] pb-[calc(18px+env(safe-area-inset-bottom))] pt-[10px] z-40 bg-gradient-to-t from-[#fffcf5] dark:from-[#030712] via-[#fffcf5]/70 dark:via-[#030712]/70 to-transparent flex gap-[10px] pointer-events-none"
       >
-        <button onClick={handlePrev} disabled={!prevContext} className="pointer-events-auto flex-1 h-[42px] rounded-full border border-white/60 bg-white/30 font-black text-[13px] text-[#92400e] shadow-[0_12px_32px_rgba(15,23,42,.12),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 disabled:opacity-45 disabled:active:scale-100 active:scale-[0.98] transition-transform dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_12px_32px_rgba(0,0,0,.28),inset_0_1px_1px_rgba(255,255,255,.1)]">
+        <button onClick={handlePrev} disabled={!prevContext} className="pointer-events-auto flex-1 h-[52px] rounded-full border border-white/60 bg-white/30 font-black text-[14px] text-[#92400e] shadow-[0_12px_32px_rgba(15,23,42,.12),inset_0_1px_1px_rgba(255,255,255,.75)] backdrop-blur-[10px] backdrop-saturate-200 disabled:opacity-45 disabled:active:scale-100 active:scale-[0.98] transition-transform dark:border-white/10 dark:bg-[#08111f]/30 dark:text-[#60a5fa] dark:shadow-[0_12px_32px_rgba(0,0,0,.28),inset_0_1px_1px_rgba(255,255,255,.1)]">
           이전 챕터
         </button>
-        <button onClick={handleNext} className="pointer-events-auto flex-1 h-[42px] rounded-full border border-[#1f2937]/10 bg-[#1f2937]/90 font-black text-[13px] text-white shadow-[0_12px_32px_rgba(31,41,55,.18),inset_0_1px_1px_rgba(255,255,255,.16)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-[0.98] transition-transform dark:border-white/20 dark:bg-[#22d3ee]/82 dark:text-[#030712] dark:shadow-[0_12px_32px_rgba(34,211,238,.22),inset_0_1px_1px_rgba(255,255,255,.24)]">
+        <button onClick={handleNext} className="pointer-events-auto flex-1 h-[52px] rounded-full border border-[#1f2937]/10 bg-[#1f2937]/90 font-black text-[14px] text-white shadow-[0_12px_32px_rgba(31,41,55,.18),inset_0_1px_1px_rgba(255,255,255,.16)] backdrop-blur-[10px] backdrop-saturate-200 active:scale-[0.98] transition-transform dark:border-white/20 dark:bg-[#22d3ee]/82 dark:text-[#030712] dark:shadow-[0_12px_32px_rgba(34,211,238,.22),inset_0_1px_1px_rgba(255,255,255,.24)]">
           {nextContext ? '다음 챕터' : '학습 완료'}
         </button>
       </motion.div>

@@ -12,7 +12,7 @@ export function BottomNav({ currentView, setView }: { currentView: BaseView, set
   ];
 
   return (
-    <div className="absolute left-6 right-6 bottom-[18px] h-[50px] rounded-[25px] bg-white/50 dark:bg-[#020617]/20 border border-white/50 dark:border-white/10 backdrop-blur-lg backdrop-saturate-200 flex justify-around items-center shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,1)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] z-50">
+    <div className="absolute left-6 right-6 bottom-[calc(18px+env(safe-area-inset-bottom))] h-[60px] rounded-[30px] bg-white/50 dark:bg-[#020617]/20 border border-white/50 dark:border-white/10 backdrop-blur-lg backdrop-saturate-200 flex justify-around items-center shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,1)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.1)] z-50">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = currentView === tab.id;
@@ -20,13 +20,13 @@ export function BottomNav({ currentView, setView }: { currentView: BaseView, set
           <button
             key={tab.id}
             onClick={() => setView(tab.id)}
-            className={`relative flex flex-col items-center justify-center gap-1 font-bold text-[9px] transition-colors w-16 h-full ${
+            className={`relative flex flex-col items-center justify-center gap-1 font-bold text-[10px] transition-colors w-16 h-full ${
               isActive 
                 ? tab.color 
                 : 'text-slate-600 dark:text-slate-400/80'
             }`}
           >
-            <Icon size={20} strokeWidth={isActive ? 2.5 : 2} className={isActive ? 'drop-shadow-sm' : ''} />
+            <Icon size={22} strokeWidth={isActive ? 2.5 : 2} className={isActive ? 'drop-shadow-sm' : ''} />
             <span>{tab.label}</span>
           </button>
         );
