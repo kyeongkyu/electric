@@ -74,7 +74,7 @@ export function FormulaView() {
       </motion.header>
 
       <motion.section variants={staggerItem} className="space-y-3">
-        <div className="rounded-full border border-white/60 bg-white/30 px-4 py-3 shadow-[0_12px_34px_rgba(15,23,42,.12),inset_0_1px_1px_rgba(255,255,255,.72)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_12px_34px_rgba(0,0,0,.3),inset_0_1px_1px_rgba(255,255,255,.1)]">
+        <div className="rounded-full border border-white/60 bg-white/30 px-4 py-2.5 shadow-[0_12px_34px_rgba(15,23,42,.12),inset_0_1px_1px_rgba(255,255,255,.72)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_12px_34px_rgba(0,0,0,.3),inset_0_1px_1px_rgba(255,255,255,.1)]">
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -83,12 +83,12 @@ export function FormulaView() {
           />
         </div>
 
-        <div className="mx-[-20px] flex gap-2 overflow-x-auto px-[20px] pb-1 hide-scrollbar">
+        <div className="mx-[-20px] flex gap-1.5 overflow-x-auto px-[20px] pb-1 hide-scrollbar">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`shrink-0 rounded-full border px-4 py-2 text-[12px] font-black transition-all active:scale-[0.98] ${
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-[11px] font-black transition-all active:scale-[0.98] ${
                 activeCategory === category
                   ? 'border-white/55 bg-white/35 text-[var(--ink)] dark:border-white/15 dark:bg-white/10 dark:text-[#e5f3ff]'
                   : 'border-white/35 bg-white/10 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400'
@@ -119,11 +119,11 @@ export function FormulaView() {
             <motion.article
               key={`${item.category}-${item.title}`}
               variants={staggerItem}
-              className="rounded-[28px] border border-white/50 bg-white/25 p-5 shadow-[0_14px_42px_rgba(15,23,42,.1),inset_0_1px_1px_rgba(255,255,255,.55)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_14px_42px_rgba(0,0,0,.3),inset_0_1px_1px_rgba(255,255,255,.08)]"
+              className="rounded-[28px] border border-white/50 bg-white/25 p-4 shadow-[0_14px_42px_rgba(15,23,42,.1),inset_0_1px_1px_rgba(255,255,255,.55)] backdrop-blur-[10px] backdrop-saturate-200 dark:border-white/10 dark:bg-[#08111f]/30 dark:shadow-[0_14px_42px_rgba(0,0,0,.3),inset_0_1px_1px_rgba(255,255,255,.08)]"
             >
               <div className="mb-3 flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <span className="rounded-full bg-blue-500/10 px-2.5 py-1 text-[10px] font-black text-blue-600 dark:bg-cyan-300/10 dark:text-[#67e8f9]">
+                  <span className="rounded-full bg-blue-500/10 px-2.5 py-0.5 text-[10px] font-black text-blue-600 dark:bg-cyan-300/10 dark:text-[#67e8f9]">
                     {item.category}
                   </span>
                   <h3 className="m-0 mt-2 text-[18px] font-black leading-snug tracking-tight text-[var(--ink)] dark:text-[#e5f3ff]">
